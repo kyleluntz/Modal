@@ -1,4 +1,4 @@
-#N canvas 250 158 1024 695 10;
+#N canvas 61 69 1024 695 10;
 #X obj 143 230 rfft~;
 #X obj 143 405 *~;
 #X obj 177 405 *~;
@@ -22,11 +22,11 @@
 #X obj 360 300 sqrt~;
 #X obj 389 145 tabreceive~ hanning;
 #X obj 361 124 fexpr~ $x1-$x1[-1] \;;
-#X obj 361 95 inlet~;
+#X obj 361 67 inlet~;
 #X obj 359 356 *~;
 #X obj 284 232 r voc;
 #X obj 223 335 *~;
-#X obj 284 261 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 284 261 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 238 292 * -1;
 #X obj 238 313 + 1;
@@ -42,6 +42,8 @@
 #X msg 420 327 0;
 #X obj 420 347 s *voc;
 #X obj 401 407 *~ 10;
+#X obj 434 72 r k-aux;
+#X obj 361 88 *~;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 1 0 8 0;
@@ -70,7 +72,7 @@
 #X connect 20 0 34 0;
 #X connect 21 0 15 1;
 #X connect 22 0 15 0;
-#X connect 23 0 22 0;
+#X connect 23 0 42 0;
 #X connect 24 0 2 1;
 #X connect 24 0 1 1;
 #X connect 25 0 27 0;
@@ -90,3 +92,5 @@
 #X connect 37 0 33 0;
 #X connect 38 0 39 0;
 #X connect 40 0 36 0;
+#X connect 41 0 42 1;
+#X connect 42 0 22 0;

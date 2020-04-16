@@ -1,5 +1,4 @@
-#N canvas 37 136 941 729 10;
-#N canvas 0 0 821 679 Karplus 0;
+#N canvas -17 85 941 729 10;
 #X obj 182 188 noise~;
 #N canvas -8 -8 1024 695 env 0;
 #X obj 143 67 inlet;
@@ -11,7 +10,7 @@
 #X obj 340 41 hsl 128 15 0 1 0 0 empty k-a empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 337 74 hsl 128 15 0 1 0 0 empty k-r empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 730 1;
 #X obj 143 94 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 143 114 select 1;
@@ -107,6 +106,9 @@
 #X obj 267 210 *~ 0.5;
 #X obj 267 236 -~ 0.5;
 #X obj 337 341 *~ 0.5;
+#X obj 153 246 r voc;
+#X obj 153 281 < 1;
+#X obj 138 306 *~;
 #X connect 0 0 27 0;
 #X connect 1 0 3 1;
 #X connect 2 0 1 0;
@@ -142,7 +144,7 @@
 #X connect 28 1 29 0;
 #X connect 29 0 2 0;
 #X connect 30 0 28 0;
-#X connect 31 0 50 0;
+#X connect 31 0 60 0;
 #X connect 32 0 31 1;
 #X connect 33 0 32 0;
 #X connect 34 0 36 0;
@@ -152,6 +154,7 @@
 #X connect 38 0 57 1;
 #X connect 39 0 50 1;
 #X connect 45 0 31 0;
+#X connect 45 1 31 0;
 #X connect 47 0 49 0;
 #X connect 48 0 13 0;
 #X connect 49 0 8 0;
@@ -163,27 +166,6 @@
 #X connect 55 0 56 0;
 #X connect 56 0 23 0;
 #X connect 57 0 3 0;
-#X restore 224 245 pd Karplus;
-#X obj 224 454 outlet~;
-#X obj 293 260 env~;
-#X obj 293 281 change;
-#X obj 293 302 sel 0;
-#X msg 293 323 0;
-#X obj 293 344 switch~;
-#X obj 224 220 inlet;
-#X obj 301 236 unpack f f;
-#X obj 358 266 > 0;
-#X obj 358 287 sel 1;
-#X msg 358 308 1;
-#X connect 0 0 1 0;
-#X connect 0 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 5 0 6 0;
-#X connect 7 0 8 0;
-#X connect 7 0 0 0;
-#X connect 8 1 9 0;
-#X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 6 0;
+#X connect 58 0 59 0;
+#X connect 59 0 60 1;
+#X connect 60 0 50 0;
